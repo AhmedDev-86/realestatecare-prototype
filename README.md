@@ -5,7 +5,7 @@ De applicatie is ontwikkeld als opdracht voor de opleiding en volgt de briefing 
 
 De demo-versie is online te benaderen via:
 
-- **Live demo:** https://realestatecare-prototype.netlify.app
+- **Live demo:** https://realestatecare-prototype.netlify.app/login
 
 ---
 
