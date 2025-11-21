@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Richtlijnen brandveiligheid",
+    "summary": "Overzicht van minimale eisen voor brandveiligheidsinspecties.",
+    "category": "Brandveiligheid"
+  },
+  {
+    "id": 2,
+    "title": "Inspectie van vocht- en schimmelproblemen",
+    "summary": "Stappenplan voor het beoordelen van vochtproblemen in woningen.",
+    "category": "Bouwkundige gebreken"
+  }
+]

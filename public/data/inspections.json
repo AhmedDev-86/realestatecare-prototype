@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "status": "open",
+    "address": "Keizersgracht 123, Amsterdam",
+    "plannedDate": "2025-11-21",
+    "inspector": "J. Jansen",
+    "riskLevel": "hoog"
+  },
+  {
+    "id": 2,
+    "status": "open",
+    "address": "Prinsengracht 45, Amsterdam",
+    "plannedDate": "2025-11-25",
+    "inspector": "M. de Vries",
+    "riskLevel": "middel"
+  },
+  {
+    "id": 3,
+    "status": "completed",
+    "address": "Herengracht 88, Amsterdam",
+    "completedDate": "2025-11-10",
+    "inspector": "J. Jansen",
+    "reportId": "REC-2025-001"
+  }
+]
