@@ -1,99 +1,93 @@
-# RealEstateCare – Inspectie dashboard (prototype)
+# RealEstateCare – Inspectie Dashboard (Prototype)
 
-Dit project is een werkend front-end prototype voor de case **RealEstateCare**.  
-De applicatie is gebouwd met **React (Vite)** voor de applicatielaag en een maatwerk **responsive touch UI** met HTML/CSS.
+Dit project is een functionerend front-end prototype voor de case RealEstateCare.  
+De applicatie is gebouwd met React (Vite) en bevat een responsive interface met HTML en CSS.
 
-De demo bevat:
+## Live demo
+https://realestatecare-prototype.netlify.app/login
 
-- Inlogscherm met gesimuleerde 2-weg authenticatie (username + wachtwoord + verificatiecode).
-- Overzicht **Openstaande inspecties**.
-- Overzicht **Uitgevoerde inspecties**.
-- Pagina **Instellingen**.
-- Pagina **Kennisbank**.
-- Routing tussen de schermen.
-- Eenvoudig state management met **Redux Toolkit**.
-- JSON-data die de case weerspiegelt (inspecties, instellingen, kennisbank).
-- Ophalen van data via een "web API"-achtige structuur (fetch naar `/data/*.json`).
+## Source code
+https://github.com/AhmedDev-86/realestatecare-prototype
 
----
+## Functionaliteiten
 
-## 1. Technische stack
+Het prototype bevat onder andere:
 
-- **Framework:** React (Vite)
-- **Routing:** React Router
-- **State management:** Redux Toolkit
-- **Styling:** custom CSS gebaseerd op de huisstijl van RealEstateCare
-- **Data:** JSON-bestanden in `/public/data`
-- **Authenticatie (gesimuleerd):**
-  - Gebruikersnaam: `inspector`
-  - Wachtwoord: `Real2025!`
-  - Verificatiecode: `123456`
+- Inlogscherm met gesimuleerde authenticatie (gebruikersnaam + wachtwoord + verificatie).
+- Overzicht van openstaande inspecties.
+- Overzicht van uitgevoerde inspecties.
+- Pagina Instellingen.
+- Pagina Kennisbank.
+- Routing tussen pagina’s.
+- State management met Redux Toolkit.
+- JSON-data voor inspecties, instellingen en kennisbank.
+- Data wordt opgehaald vanuit JSON-bestanden in /public/data.
 
----
+## Technische stack
 
-## 2. Projectstructuur
+- Framework: React (Vite)
+- Routing: React Router
+- State management: Redux Toolkit
+- Styling: Custom CSS
+- Data: JSON-bestanden in de map /public/data
+- Authenticatie (gesimuleerd):
+  - Gebruikersnaam: inspector
+  - Wachtwoord: 2023
 
-```text
-realestatecare-prototype
-├─ public
-│  ├─ img
-│  │  └─ RealEstate.png           # Logo
-│  └─ data
-│     ├─ inspections.json         # Open / completed inspecties
-│     ├─ settings.json            # Basis instellingen
-│     └─ knowledge.json           # Kennisbankartikelen
-│
-└─ src
-   ├─ main.jsx                    # Entry point + Router + Redux Provider
-   ├─ App.jsx                     # Route-definitie
-   ├─ styles.css                  # Globale styling / huisstijl
-   │
-   ├─ store
-   │  ├─ index.js                 # Redux store configuratie
-   │  ├─ authSlice.js             # Login + 2FA state
-   │  └─ inspectionsSlice.js      # Inspectie-data state
-   │
-   ├─ services
-   │  └─ api.js                   # Ophalen JSON (fetch)
-   │
-   ├─ components
-   │  ├─ NavBar.jsx               # Top navigatie + logo
-   │  ├─ Layout.jsx               # Layout + <Outlet/>
-   │  └─ ProtectedRoute.jsx       # Beschermde routes
-   │
-   └─ pages
-      ├─ Login.jsx                # Login + 2FA
-      ├─ OpenInspections.jsx      # Openstaande inspecties
-      ├─ CompletedInspections.jsx # Uitgevoerde inspecties
-      ├─ Settings.jsx             # Instellingen
-      └─ KnowledgeBase.jsx        # Kennisbank
+## Installatie
+
+1. Installeer dependencies  
+   npm install
+
+2. Start de development server  
+   npm run dev
+
+3. Maak een productie build  
+   npm run build
+
+## Projectstructuur
+
+src  
+- pages (alle pagina’s)  
+- services (data services)  
+- store (Redux store en slices)  
+- styles.css  
+- App.jsx  
+- main.jsx  
+
+public  
+- data (JSON-bestanden)
+
+## Auteur
+AhmedDev-86  
 
 ## Verantwoording
-Verantwoording
+Tijdens het bouwen van dit prototype heb ik keuzes gemaakt op basis van de eisen uit de opdracht, de beschikbare technologieën en de praktische toepasbaarheid binnen een moderne front-end workflow. Hieronder licht ik toe hoe ik ben omgegaan met beveiliging, toegankelijkheid, usability en best practices.
 
-Bij het ontwikkelen van dit prototype voor RealEstateCare heb ik bewust keuzes gemaakt op het gebied van beveiliging, bruikbaarheid, toegankelijkheid en codekwaliteit. Omdat het om een front-end prototype gaat, was het doel vooral om een logische en realistische gebruikerservaring te creëren die aansluit bij de case. In deze verantwoording licht ik kort toe welke afwegingen ik heb gemaakt en waarom.
+### Beveiliging
+Hoewel het prototype geen echte backend bevat, heb ik binnen de front-end een aantal beveiligingsprincipes toegepast. De login werkt met een gesimuleerde 2-weg authenticatie waarbij de gebruiker een extra code moet invoeren. De ProtectedRoute-component voorkomt dat niet-ingelogde gebruikers toegang krijgen tot de inhoud van de applicatie. Verder worden er geen gevoelige gegevens in localStorage geplaatst en wordt er enkel met mock-data gewerkt. Dit sluit aan bij de opdracht, waarin de focus ligt op structuur in plaats van een volledig beveiligde omgeving.
 
-Beveiliging
+### Toegankelijkheid (WCAG 2.1 – niveau A)
+Tijdens het ontwerpen en implementeren heb ik rekening gehouden met basisrichtlijnen uit WCAG 2.1 niveau A. Voorbeelden hiervan zijn:
+- Duidelijke contrasten gebaseerd op de huisstijl.
+- Labels bij alle invoervelden.
+- Semantische HTML-structuur binnen de React-componenten.
+- Navigatie die consistent is op alle schermen.
+- Knoppen die ook via toetsenbord gebruikt kunnen worden.
 
-De applicatie bevat een gesimuleerde inlog- en verificatiestroom. Hoewel er geen echte backend is, heb ik geprobeerd om het proces zo geloofwaardig mogelijk vorm te geven. Inloggegevens en verificatiecodes worden niet extern opgeslagen of verstuurd; ze worden uitsluitend in de front-end gevalideerd. Routes met gevoelige informatie worden afgeschermd via een ProtectedRoute, zodat de gebruiker niet zonder inloggen bij de dashboardpagina’s kan komen.
-Een echte productieomgeving zou uiteraard strengere maatregelen vereisen, zoals server-side validatie, tokenbeheer, HTTPS en inputvalidatie, maar voor dit prototype is de opzet bewust eenvoudig gehouden zonder de illusie van een veilige flow te verliezen.
+Het prototype voldoet aan de belangrijkste eisen van niveau A, maar voor AA of AAA zouden extra aria-attributen en uitgebreidere contrastanalyse nodig zijn.
 
-Bruikbaarheid (Nielsen’s heuristieken)
+### Usability (Nielsen Heuristieken)
+De applicatie volgt meerdere heuristieken van Jakob Nielsen:
+- Consistency & standards: alle pagina’s hebben dezelfde navigatiebalk en structuur.
+- Visibility of system status: de login geeft duidelijke feedback, net als de actieve navigatie-items.
+- User control & freedom: gebruikers kunnen altijd terug naar een andere pagina via de navigatie.
+- Recognition rather than recall: duidelijke namen voor menu-items en herkenbare iconen.
 
-Tijdens het ontwerp heb ik me vooral gefocust op duidelijkheid en voorspelbaarheid. De navigatiebalk is altijd zichtbaar, waardoor gebruikers eenvoudig tussen de vier hoofdschermen kunnen wisselen. Teksten en titels zijn herkenbaar gekozen en sluiten aan op de taal van de case (“Openstaande inspecties”, “Kennisbank”, enzovoort).
-Foutmeldingen verschijnen direct boven het formulier en zijn kort en begrijpelijk. In de inspectielijsten wordt informatie in kleine, overzichtelijke kaarten gepresenteerd, wat helpt om cognitieve belasting laag te houden.
-Het doel was een applicatie waarin gebruikers niet hoeven te ‘zoeken’ naar functies, maar intuïtief begrijpen waar ze moeten zijn zonder extra uitleg.
+De interface is eenvoudig opgezet zodat gebruikers niet onnodig belast worden.
 
-Toegankelijkheid (WCAG 2.1 niveau A)
+### Styling & Best Practices
+De huisstijl uit de meegeleverde bestanden is verwerkt in kleuren, logo en algemene vormgeving. Er is gebruikgemaakt van een component-gebaseerde structuur, services voor datalogica, Redux Toolkit voor state management en een overzichtelijke projectindeling. De code is geschreven met aandacht voor leesbaarheid en uitbreidbaarheid.
 
-Hoewel dit prototype geen volledige toegankelijkheidsaudit heeft doorlopen, heb ik geprobeerd om basisrichtlijnen toe te passen. De interface gebruikt semantische HTML-elementen waar mogelijk, zoals <section> met aria-labelledby, en alle invoervelden hebben gekoppelde labels. De kleurcontrasten tussen tekst en achtergrond zijn sterk genoeg om ook bij mindere schermkwaliteit leesbaar te blijven.
-Verder zijn focusstaten duidelijk zichtbaar, zodat gebruikers met toetsenbordnavigatie weten waar ze zich bevinden. Niet alle WCAG-criteria zijn volledig uitgewerkt, maar de belangrijkste “A-niveau” punten zijn meegenomen tijdens het bouwen.
-
-Stijlgidsen en best practices
-
-De structuur van het project is opgezet met het oog op uitbreidbaarheid. Componenten, pagina’s, services en Redux-slices zijn logisch gescheiden, waardoor het project ook voor andere ontwikkelaars makkelijk te begrijpen blijft. CSS is opgebouwd met variabelen voor kleuren en consistent gebruikte spacing en typografie. Dit maakt het eenvoudig om de huisstijl later aan te passen zonder de hele codebase door te gaan.
-Voor de logica heb ik gebruikgemaakt van Redux Toolkit, omdat deze methode boilerplate vermindert en zorgt voor voorspelbaar gedrag van de applicatiestatus. React Router is op een overzichtelijke manier geïntegreerd: elke pagina heeft één duidelijke route en er wordt gebruikgemaakt van nested routing voor de algemene layout.
-
-Samenvatting
-
-Het prototype laat zien hoe de belangrijkste onderdelen van de RealEstateCare-case in een moderne front-end oplossing kunnen worden verwerkt. De keuzes rondom beveiliging, toegankelijkheid en consistentie zijn gebaseerd op haalbaarheid binnen een prototypecontext, zonder het realistische karakter van de applicatie uit het oog te verliezen. Hoewel deze versie niet bedoeld is als productieversie, vormt het een solide basis waarop verdere functionaliteit, een backend-koppeling en uitgebreidere beveiligingsmaatregelen kunnen worden opgebouwd.
+### Conclusie
+Het prototype voldoet aan de gevraagde functionaliteiten en laat zien hoe de toepassing er in de praktijk kan uitzien. De focus lag op structuur, toegankelijkheid en consistentie. Hoewel het geen productierijp systeem is, vormt het een solide basis voor verdere ontwikkeling.
