@@ -161,3 +161,17 @@ git clone https://github.com/AhmedDev-86/realestatecare-prototype.git
 cd realestatecare-prototype
 npm install
 npm run dev
+
+
+---
+## Verantwoording
+
+In deze README is de volledige verantwoording opgenomen met betrekking tot:
+- Toegepaste beveiligingsmaatregelen
+- Toegankelijkheid volgens WCAG 2.1 niveau A
+- Bruikbaarheid gebaseerd op de 10 heuristieken van Jakob Nielsen
+- Gebruik van stijlgidsen, best practices en designprincipes
+- Routing, state management en data-afhandeling via JSON + service
+
+Deze punten zijn verwerkt in de beschrijvingen en technische toelichtingen hierboven en vormen samen de verplichte verantwoording voor deze opdracht.
+
